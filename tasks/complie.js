@@ -19,7 +19,6 @@ module.exports = function (grunt) {
 			"function ($data, $opt) {",
 			"      $data = $data || {};",
 			"      var _$out_= [];",
-			"      var $print = function(str) {_$out_.push(str);};",
 			"      _$out_.push('" + tmpl
 				.replace(/\r\n|\n|\r/g, "\v")
 				.replace(/(?:^|%>).*?(?:<%|$)/g, function($0) {
@@ -77,7 +76,8 @@ module.exports = function (grunt) {
 				"  } else {",
 				"    root['" + name + "'] = factory();",
 				"  }",
-				"}(this, function (){var " + name + " = {"
+				"}(this, function (){",
+				"var " + name + " = {"
 			].join(EOL));
 			output.push('  };');
 			output = output.join(grunt.util.normalizelf(grunt.util.linefeed));
