@@ -25,7 +25,7 @@ module.exports = function (grunt) {
           return $0.replace(/('|\\)/g, "\\$1").replace(/[\v\t]/g, "").replace(/\s+/g, " ")
         })
         .replace(/[\v]/g, EOL)
-        .replace(/<%==(.*?)%>/g, "', $.opt.encodeHtml($1), '")
+        .replace(/<%==(.*?)%>/g, "', $opt.encodeHtml($1), '")
         .replace(/<%=(.*?)%>/g, "', $1, '")
         .replace(/<%(<-)?/g, "');" + EOL + "      ")
         .replace(/->(\w+)%>/g, EOL + "      $1.push('")
