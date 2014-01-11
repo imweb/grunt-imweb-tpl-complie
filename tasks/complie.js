@@ -14,10 +14,12 @@ module.exports = function (grunt) {
     , EOL = '\n';
   function compileTmpl(tmpl) {
     var res = []
+      , strict = (/\bit\b/).test(tmpl);
     tmpl.replace(/<\/script>/ig, '</s<%=""%>cript>');
     res.push([
-      "function ($data, $opt) {",
-      "      $data = $data || {};",
+      "function (it, opt) {",
+      "      it = it || {};",
+      "      with () {",
       "      var _$out_= [];",
       "      _$out_.push('" + tmpl
         .replace(/\r\n|\n|\r/g, "\v")
@@ -25,12 +27,13 @@ module.exports = function (grunt) {
           return $0.replace(/('|\\)/g, "\\$1").replace(/[\v\t]/g, "").replace(/\s+/g, " ")
         })
         .replace(/[\v]/g, EOL)
-        .replace(/<%==(.*?)%>/g, "', $opt.encodeHtml($1), '")
+        .replace(/<%==(.*?)%>/g, "', opt.encodeHtml($1), '")
         .replace(/<%=(.*?)%>/g, "', $1, '")
         .replace(/<%(<-)?/g, "');" + EOL + "      ")
         .replace(/->(\w+)%>/g, EOL + "      $1.push('")
         .split("%>").join(EOL + "      _$out_.push('") + "');",
       "      return _$out_.join('');",
+      "    }",
       "    }"
     ].join(EOL).replace(/_\$out_\.push\(''\);/g, ''));
 
