@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     res.push([
       "function (it, opt) {",
       "      it = it || {};",
-      "      with () {",
+      "      with (it) {",
       "      var _$out_= [];",
       "      _$out_.push('" + tmpl
         .replace(/\r\n|\n|\r/g, "\v")
