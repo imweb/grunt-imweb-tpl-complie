@@ -1,4 +1,4 @@
-# grunt-imweb-tpl-complie
+# grunt-imweb-tpl-complie[![build status](https://secure.travis-ci.org/miniflycn/grunt-imweb-tpl-complie.png)](http://travis-ci.org/miniflycn/grunt-imweb-tpl-complie)
 > Just a Template Complier
 
 ## Getting Started

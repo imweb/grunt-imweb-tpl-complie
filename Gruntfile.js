@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       tests: ['test/expected/js']
     },
 
-		mocha_phantomjs: {
+    mocha_phantomjs: {
       options: {
         'reporter': 'xunit',
         'output': 'tests/results/result.xml'
