@@ -16,8 +16,7 @@
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "https://github.com/vermilion1/grunt-template-inline/blob/master/LICENSE-MIT"
+      "type": "MIT"
     }
   ],
   "engines": {
@@ -27,6 +26,8 @@
     "test": "grunt test"
   },
   "devDependencies": {
+    "grunt-mocha-phantomjs": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
     "grunt": "*"
   },
   "peerDependencies": {
