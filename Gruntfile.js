@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       main: {
         options:{},
         files: {
-          'test/expected/js/1.js': ['test/*.html']
+          'test/expected/js/tpl.js': ['test/*.html']
         }
       }
     },

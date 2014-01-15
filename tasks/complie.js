@@ -47,10 +47,10 @@ module.exports = function (grunt) {
         return src;
       },
       processName: function (name) {
-        return name;
+        return path.basename(name).replace('.html', '');
       }
     });
-    var processName = options.processName || function (name) { return name; };
+    var processName = options.processName || function (name) { return path.basename(name).replace('.html', ''); };
 
     grunt.verbose.writeflags(options, 'Options');
 
