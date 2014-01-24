@@ -20,8 +20,8 @@ module.exports = function (grunt) {
       "function (it, opt) {",
       "      it = it || {};",
       "      with (it) {",
-      "      var _$out_= [];",
-      "      _$out_.push('" + tmpl
+      "        var _$out_= [];",
+      "        _$out_.push('" + tmpl
         .replace(/\r\n|\n|\r/g, "\v")
         .replace(/(?:^|%>).*?(?:<%|$)/g, function($0) {
           return $0.replace(/('|\\)/g, "\\$1").replace(/[\v\t]/g, "").replace(/\s+/g, " ")
@@ -29,11 +29,11 @@ module.exports = function (grunt) {
         .replace(/[\v]/g, EOL)
         .replace(/<%==(.*?)%>/g, "', opt.encodeHtml($1), '")
         .replace(/<%=(.*?)%>/g, "', $1, '")
-        .replace(/<%(<-)?/g, "');" + EOL + "      ")
-        .replace(/->(\w+)%>/g, EOL + "      $1.push('")
-        .split("%>").join(EOL + "      _$out_.push('") + "');",
-      "      return _$out_.join('');",
-      "    }",
+        .replace(/<%(<-)?/g, "');" + EOL + "        ")
+        .replace(/->(\w+)%>/g, EOL + "        $1.push('")
+        .split("%>").join(EOL + "        _$out_.push('") + "');",
+      "        return _$out_.join('');",
+      "      }",
       "    }"
     ].join(EOL).replace(/_\$out_\.push\(''\);/g, ''));
 
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
         var src = options.processContent(grunt.file.read(filepath));
         var compiled = compileTmpl(src);
         var filename = processName(filepath);
-        return "  '" + filename + "' : " + compiled + ",";
+        return "    '" + filename + "' : " + compiled + ",";
       });
 
       output.unshift([
@@ -80,13 +80,13 @@ module.exports = function (grunt) {
         "    root['" + name + "'] = factory();",
         "  }",
         "}(this, function (){",
-        "var " + name + " = {"
+        "  return {"
       ].join(EOL));
       output.push('  };');
       output = output.join(grunt.util.normalizelf(grunt.util.linefeed));
       var lastDou = output.lastIndexOf(',');
       output = output.substr(0, lastDou) + output.substr(lastDou + 1);
-      output += EOL + '  return ' + name + ';' + EOL + '}));';
+      output += EOL + '}));';
 
       grunt.file.write(f.dest, output);
       grunt.log.writeln('File "' + f.dest + '" created.');
