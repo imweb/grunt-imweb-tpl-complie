@@ -1,8 +1,11 @@
 /*!
  * grunt-imweb-tpl-complie
  *
- * Copyright (c) 2013 Daniel Yang
- * Licensed under the MIT license.
+ * Modified from grunt-yomb & grunt-template-inline
+ * https://github.com/webyom/grunt-yomb
+ * https://github.com/vermilion1/grunt-template-inline
+ * Thanks to these open source projects
+ * The MIT License
  */
 
 'use strict';
