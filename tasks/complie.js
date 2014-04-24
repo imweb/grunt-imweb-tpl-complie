@@ -22,6 +22,7 @@ module.exports = function (grunt) {
     res.push([
       "function (it, opt) {",
       "      it = it || {};",
+      "      opt = opt || {};",
       "      with (it) {",
       "        var _$out_= [];",
       "        _$out_.push('" + tmpl
