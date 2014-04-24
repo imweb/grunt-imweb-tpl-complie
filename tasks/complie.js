@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         .replace(/(?:^|%>).*?(?:<%|$)/g, function($0) {
           return $0.replace(/('|\\)/g, "\\$1").replace(/[\v\t]/g, "").replace(/\s+/g, " ")
         })
-        .replace(/<!--[\s\S]+?-->/, '')
+        .replace(/<!--[\s\S]+?-->/g, '')
         .replace(/[\v]/g, EOL)
         .replace(/<%==(.*?)%>/g, "', opt.encodeHtml ? opt.encodeHtml($1) : html.encode($1), '")
         .replace(/<%=(.*?)%>/g, "', $1, '")

@@ -10,7 +10,7 @@
       it = it || {};
       with (it) {
         var _$out_= [];
-        _$out_.push('', opt.encodeHtml(say), '');
+        _$out_.push('', opt.encodeHtml ? opt.encodeHtml(say) : html.encode(say), '');
         return _$out_.join('');
       }
     },
