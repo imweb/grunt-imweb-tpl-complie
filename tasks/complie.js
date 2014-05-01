@@ -14,6 +14,7 @@ module.exports = function (grunt) {
 
   var path = require('path')
     , fs = require('fs')
+    , beautify = require('js-beautify')
     , EOL = '\n';
   function compileTmpl(tmpl) {
     var res = []
@@ -93,7 +94,9 @@ module.exports = function (grunt) {
       output = output.substr(0, lastDou) + output.substr(lastDou + 1);
       output += EOL + '}));';
 
-      grunt.file.write(f.dest, output);
+      grunt.file.write(f.dest, beautify(output, {
+        "jslint_happy": true
+      }));
       grunt.log.writeln('File "' + f.dest + '" created.');
     });
   });

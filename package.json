@@ -1,7 +1,7 @@
 {
   "name": "grunt-imweb-tpl-complie",
   "description": "Put templates content to JS object",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "homepage": "https://github.com/miniflycn/grunt-imweb-tpl-complie",
   "author": {
     "name": "Daniel Yang",
@@ -24,6 +24,9 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "js-beautify": "*"
   },
   "devDependencies": {
     "grunt-mocha-phantomjs": "~0.4.0",
