@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/QQEDU/grunt-imweb-tpl-complie.svg?branch=master)](https://travis-ci.org/QQEDU/grunt-imweb-tpl-complie)
-> Just a Template Complier
+#grunt-imweb-tpl-complie
+
+> Just a Template Compiler
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
