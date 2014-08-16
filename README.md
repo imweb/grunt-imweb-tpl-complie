@@ -1,4 +1,4 @@
-# grunt-imweb-tpl-complie[![build status](https://travis-ci.org/QQEDU/grunt-imweb-tpl-complie.svg)](http://travis-ci.org/QQEDU/grunt-imweb-tpl-complie)
+[![Build Status](https://travis-ci.org/QQEDU/grunt-imweb-tpl-complie.svg?branch=master)](https://travis-ci.org/QQEDU/grunt-imweb-tpl-complie)
 > Just a Template Complier
 
 ## Getting Started

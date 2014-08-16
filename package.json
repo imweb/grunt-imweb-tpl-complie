@@ -1,18 +1,18 @@
 {
   "name": "grunt-imweb-tpl-complie",
   "description": "Put templates content to JS object",
-  "version": "0.1.8",
-  "homepage": "https://github.com/miniflycn/grunt-imweb-tpl-complie",
+  "version": "0.1.9",
+  "homepage": "https://github.com/QQEDU/grunt-imweb-tpl-complie",
   "author": {
     "name": "Daniel Yang",
     "email": "miniflycn@justany.net"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/miniflycn/grunt-imweb-tpl-complie.git"
+    "url": "https://github.com/QQEDU/grunt-imweb-tpl-complie.git"
   },
   "bugs": {
-    "url": "https://github.com/miniflycn/grunt-imweb-tpl-complie/issues"
+    "url": "https://github.com/QQEDU/grunt-imweb-tpl-complie/issues"
   },
   "licenses": [
     {
