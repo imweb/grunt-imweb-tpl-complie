@@ -8,16 +8,14 @@
     return {
         'encode': function (it, opt) {
             it = it || {};
-            opt = opt || {};
             with(it) {
                 var _$out_ = [];
-                _$out_.push('', opt.encodeHtml ? opt.encodeHtml(say) : html.encode(say), '');
+                _$out_.push('', opt.encodeHtml(say), '');
                 return _$out_.join('');
             }
         },
         'it': function (it, opt) {
             it = it || {};
-            opt = opt || {};
             with(it) {
                 var _$out_ = [];
                 _$out_.push('<p>', it.say, '</p>');
@@ -26,7 +24,6 @@
         },
         'render': function (it, opt) {
             it = it || {};
-            opt = opt || {};
             with(it) {
                 var _$out_ = [];
                 _$out_.push('<p>', say, '</p>');
@@ -35,7 +32,6 @@
         },
         'static': function (it, opt) {
             it = it || {};
-            opt = opt || {};
             with(it) {
                 var _$out_ = [];
                 _$out_.push('<p>Hello, world</p>');

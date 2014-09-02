@@ -1,8 +1,7 @@
 /*!
  * grunt-imweb-tpl-complie
  *
- * Modified from grunt-yomb & grunt-template-inline
- * https://github.com/webyom/grunt-yomb
+ * Modified grunt-template-inline
  * https://github.com/vermilion1/grunt-template-inline
  * Thanks to these open source projects
  * The MIT License
@@ -15,36 +14,8 @@ module.exports = function (grunt) {
   var path = require('path')
     , fs = require('fs')
     , beautify = require('js-beautify')
-    , EOL = '\n';
-  function compileTmpl(tmpl) {
-    var res = []
-      , strict = (/\bit\b/).test(tmpl);
-    tmpl.replace(/<\/script>/ig, '</s<%=""%>cript>');
-    res.push([
-      "function (it, opt) {",
-      "      it = it || {};",
-      "      opt = opt || {};",
-      "      with (it) {",
-      "        var _$out_= [];",
-      "        _$out_.push('" + tmpl
-        .replace(/\r\n|\n|\r/g, "\v")
-        .replace(/(?:^|%>).*?(?:<%|$)/g, function($0) {
-          return $0.replace(/('|\\)/g, "\\$1").replace(/[\v\t]/g, "").replace(/\s+/g, " ")
-        })
-        .replace(/<!--[\s\S]+?-->/g, '')
-        .replace(/[\v]/g, EOL)
-        .replace(/<%==(.*?)%>/g, "', opt.encodeHtml ? opt.encodeHtml($1) : html.encode($1), '")
-        .replace(/<%=(.*?)%>/g, "', $1, '")
-        .replace(/<%(<-)?/g, "');" + EOL + "        ")
-        .replace(/->(\w+)%>/g, EOL + "        $1.push('")
-        .split("%>").join(EOL + "        _$out_.push('") + "');",
-      "        return _$out_.join('');",
-      "      }",
-      "    }"
-    ].join(EOL).replace(/_\$out_\.push\(''\);/g, ''));
-
-    return res.join('');
-  }
+    , EOL = '\n'
+    , compileTmpl = require('micro-tpl');
 
   grunt.registerMultiTask('tplComplie', 'Compile templates to JS file', function () {
     var options = this.options({
