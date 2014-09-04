@@ -44,7 +44,7 @@ module.exports = function (grunt) {
       })
       .map(function (filepath) {
         var src = options.processContent(grunt.file.read(filepath));
-        var compiled = compileTmpl(src);
+        var compiled = compileTmpl(src, { path: filepath });
         var filename = processName(filepath);
         return "    '" + filename + "' : " + compiled + ",";
       });

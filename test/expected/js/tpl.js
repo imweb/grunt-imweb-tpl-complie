@@ -14,6 +14,31 @@
                 return _$out_.join('');
             }
         },
+        'include': function (it, opt) {
+            it = it || {};
+            with(it) {
+                var _$out_ = [];
+
+
+                var item;
+                for (var i = 0, l = items.length; i < l; i++) {
+                    item = items[i];
+
+                    _$out_.push('', function (it, opt) {
+                        it = it || {};
+                        with(it) {
+                            var _$out_ = [];
+                            _$out_.push('<p>', it.say, '</p>');
+                            return _$out_.join('');
+                        }
+                    }(item), '');
+
+                }
+
+
+                return _$out_.join('');
+            }
+        },
         'it': function (it, opt) {
             it = it || {};
             with(it) {
